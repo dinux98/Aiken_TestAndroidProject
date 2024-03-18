@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "272152295674",
+    "project_id": "shopie-bdeb2",
+    "storage_bucket": "shopie-bdeb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272152295674:android:472a214daee4c230813143",
+        "android_client_info": {
+          "package_name": "com.example.shopie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlh7dz5BuIXfj9KHstkfBRxQqddGFzk1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
