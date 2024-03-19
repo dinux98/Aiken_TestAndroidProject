@@ -1,9 +1,10 @@
-package com.example.shopie;
+package com.example.shopie.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.shopie.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -23,6 +25,8 @@ public class RegistrationActivity extends AppCompatActivity {
     Button signup;
     EditText name , email , password;
     TextView signin;
+
+    SharedPreferences sharedPreferences;
 
     private static final String TAG = "Registration";
 
@@ -40,6 +44,19 @@ public class RegistrationActivity extends AppCompatActivity {
         signup = findViewById(R.id.btn_signup);
         signin = findViewById(R.id.tv_signin);
         auth = FirebaseAuth.getInstance();
+
+
+        SharedPreferences sharedPreferences = getSharedPreferences("onBoardingScreen",MODE_PRIVATE);
+        Boolean isFirstTime = sharedPreferences.getBoolean("firstTime",true);
+        if (isFirstTime){
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("firstTime",false);
+            editor.commit();
+            startActivity(new Intent(RegistrationActivity.this,OnBoardingActivity.class));
+            finish();
+
+        }
+
 
         if (auth.getCurrentUser()!= null){
             startActivity(new Intent(RegistrationActivity.this,MainActivity.class));

@@ -1,4 +1,4 @@
-package com.example.shopie;
+package com.example.shopie.adapters;
 
 import android.content.Context;
 import android.media.Image;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.example.shopie.R;
 
 public class SliderAdapter extends PagerAdapter {
     Context context;
