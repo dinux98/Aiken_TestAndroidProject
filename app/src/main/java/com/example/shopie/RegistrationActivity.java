@@ -39,8 +39,12 @@ public class RegistrationActivity extends AppCompatActivity {
 
         signup = findViewById(R.id.btn_signup);
         signin = findViewById(R.id.tv_signin);
-
         auth = FirebaseAuth.getInstance();
+
+        if (auth.getCurrentUser()!= null){
+            startActivity(new Intent(RegistrationActivity.this,MainActivity.class));
+            finish();
+        }
 
 
 
@@ -89,5 +93,4 @@ public class RegistrationActivity extends AppCompatActivity {
     public void signin(View view){
         startActivity(new Intent(RegistrationActivity.this,LoginActivity.class));
     }
-
 }
